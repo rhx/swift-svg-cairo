@@ -182,7 +182,7 @@ public extension SVGCairo {
     ///   - blue: Blue component of the rendering source colour
     ///   - alpha: Alpha component of the rendering source colour
     /// - Returns: Status indicating success or failure
-    func renderToPNG(fileName: UnsafePointer<CChar>, scaleX: Double?, scaleY: Double? = nil, width: Int?, height: Int?, scalingMode: ScalingMode = .aspectFit, horizontalAlignment: Alignment = .centre, verticalAlignment: Alignment = .centre, red: Double = 1.0, green: Double = 1.0, blue: Double = 1.0, alpha: Double = 1.0) -> SVGCairoStatus {
+    func renderToPNG(fileName: UnsafePointer<CChar>, scaleX: Double? = nil, scaleY: Double? = nil, width: Int?, height: Int?, scalingMode: ScalingMode = .aspectFit, horizontalAlignment: Alignment = .centre, verticalAlignment: Alignment = .centre, red: Double = 1.0, green: Double = 1.0, blue: Double = 1.0, alpha: Double = 1.0) -> SVGCairoStatus {
         let transformation = renderingTransformation(scaleX: scaleX, scaleY: scaleY, width: width, height: height, scalingMode: scalingMode, horizontalAlignment: horizontalAlignment, verticalAlignment: verticalAlignment)
         guard let surface = cairo_image_surface_create(CAIRO_FORMAT_ARGB32, CInt(transformation.width + 0.5), CInt(transformation.height + 0.5)) else { return .noMemory }
         defer { cairo_surface_destroy(surface) }

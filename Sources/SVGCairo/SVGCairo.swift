@@ -13,15 +13,15 @@ public class SVGCairo {
         svg_cairo_destroy(svgc)
     }
     /// Parse the file at the given path.
-    /// - Parameter filename: The name of the file to parse
+    /// - Parameter fileName: The name of the file to parse
     /// - Returns: Status indicating success or failure
-    @inlinable func parse(filename: UnsafePointer<CChar>) -> SVGCairoStatus {
-        svg_cairo_parse(svgc, filename)
+    @inlinable public func parse(fileName: UnsafePointer<CChar>) -> SVGCairoStatus {
+        svg_cairo_parse(svgc, fileName)
     }
     /// Parse the given file at the given path.
     /// - Parameter file: A `FILE` pointer representing the file to parse
     /// - Returns: Status indicating success or failure
-    @inlinable func parse(file: UnsafeMutablePointer<FILE>) -> SVGCairoStatus {
+    @inlinable public func parse(file: UnsafeMutablePointer<FILE>) -> SVGCairoStatus {
         svg_cairo_parse_file(svgc, file)
     }
     /// Parse in-memory SVG.
@@ -29,12 +29,12 @@ public class SVGCairo {
     ///   - buffer: Pointer to the memory location containing the SVG source
     ///   - size: Size of the buffer in bytes
     /// - Returns: Status indicating success or failure
-    @inlinable func parse(buffer: UnsafePointer<CChar>, size: size_t) -> SVGCairoStatus {
+    @inlinable public func parse(buffer: UnsafePointer<CChar>, size: size_t) -> SVGCairoStatus {
         svg_cairo_parse_buffer(svgc, buffer, size)
     }
     /// Begin parsing SVG chunks
     /// - Returns: Status indicating success or failure
-    @inlinable func parseChunkBegin() -> SVGCairoStatus {
+    @inlinable public func parseChunkBegin() -> SVGCairoStatus {
         svg_cairo_parse_chunk_begin(svgc)
     }
     /// Parse a chunk of in-memory SVG.
@@ -42,22 +42,22 @@ public class SVGCairo {
     ///   - chunk: Pointer to the memory location containing the SVG chunk
     ///   - size: Size of the buffer in bytes
     /// - Returns: Status indicating success or failure
-    @inlinable func parse(chunk: UnsafePointer<CChar>, size: size_t) -> SVGCairoStatus {
+    @inlinable public func parse(chunk: UnsafePointer<CChar>, size: size_t) -> SVGCairoStatus {
         svg_cairo_parse_chunk(svgc, chunk, size)
     }
     /// End parsing SVG chunks
     /// - Returns: Status indicating success or failure
-    @inlinable func parseChunkEnd() -> SVGCairoStatus {
+    @inlinable public func parseChunkEnd() -> SVGCairoStatus {
         svg_cairo_parse_chunk_end(svgc)
     }
     /// Render into the given Cairo context
     /// - Parameter context: Cairo context to render into
     /// - Returns: Status indicating success or failure
-    @inlinable func render(context: UnsafeMutablePointer<cairo_t>) -> SVGCairoStatus {
+    @inlinable public func render(context: UnsafeMutablePointer<cairo_t>) -> SVGCairoStatus {
         svg_cairo_render(svgc, context)
     }
     /// The view port dimensions for this SVG
-    @inlinable var size: (width: Int, height: Int) {
+    @inlinable public var size: (width: Int, height: Int) {
         get {
             var width = CUnsignedInt(0)
             var height = CUnsignedInt(0)

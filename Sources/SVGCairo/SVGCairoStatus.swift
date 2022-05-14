@@ -6,10 +6,12 @@
 //
 import CSVGCairo
 
-/// Cairo SVG parsing/rendering status information
-public typealias SVGCairoStatus = svg_cairo_status_t
+public extension SVGCairo {
+    /// Cairo SVG parsing/rendering status information
+    typealias SVGCairoStatus = svg_cairo_status_t
+}
 
-public extension SVGCairoStatus {
+public extension SVGCairo.SVGCairoStatus {
     /// Last operation was successful
     static let success = SVG_CAIRO_STATUS_SUCCESS
     /// Running out of memory

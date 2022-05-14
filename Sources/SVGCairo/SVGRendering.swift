@@ -1,7 +1,7 @@
 //
 //  SVGRendering.swift
 //  
-//
+//  Copyright © 2022 René Hexel, all rights reserved.
 //  Created by Rene Hexel on 14/5/2022.
 //
 

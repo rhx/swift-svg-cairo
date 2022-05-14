@@ -1,0 +1,12 @@
+module CSVGCairo [system] {
+	header "svg_cairo_bridging.h"
+
+    link "libsvg-cairo"
+    link "svg"
+	link "cairo"
+	link "cairo-gobject"
+	link "gobject-2.0"
+	link "glib-2.0"
+
+	export *
+}

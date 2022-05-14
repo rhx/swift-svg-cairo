@@ -1,3 +1,3 @@
 # SVGCairo
 
-A description of this package.
+A Swift wrapper around svg-cairo
